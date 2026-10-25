@@ -1,0 +1,14 @@
+digraph F {
+  rankdir=LR; bgcolor="white"; nodesep=0.3;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#F0F9FF", color="#0EA5E9"];
+  edge [color="#64748B"];
+  in [label="Text request", fillcolor="#F1F5F9", color="#94A3B8"];
+  parse [label="parse\ncategories + budget"];
+  ret [label="retrieve\nSQLite catalog"];
+  fil [label="filter\nallergens · distance"];
+  sc  [label="score\nprice · rating · distance · brand"];
+  pl  [label="plan\nbest pick, then cheapest swaps"];
+  rd  [label="render"];
+  out [label="Basket", fillcolor="#F1F5F9", color="#94A3B8"];
+  in->parse->ret->fil->sc->pl->rd->out;
+}
